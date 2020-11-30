@@ -1,9 +1,6 @@
-## Flask Template
+## Plug a Machine Learning model to an application
 
-#### Key Libraries
-* flask
-* flask-sqlaclhemy
-* flask-login
-* flask-admin
-* flask-wtforms
-* wtforms
+This application uses a serialized version of the built machine learning model to apply predictions on sample data for Probability of Default.
+
+
+<a href="https://www.kaggle.com/penroselearning/probability-of-default-bank-loan-data">Check out the full notebook</a>
