@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Apply ML Model - Probability of Default</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ml.css') }}">
+</head>
+<body>
+
+    <nav>
+        <div><span><b>Predictions with Machine Learning Models</b></span>
+        </div>
+        <div>
+            <span>
+                <a href="https://sunil-mnair.github.io" target="_blank">Developed by Sunil Nair</a>
+            </span>
+            <!-- <span><a href="/build_model">Build Model</a></span>
+        <span><a href="/apply_model">Apply Model</a></span> -->
+    </div>
+    </nav>
+
+    
+    
+      <div class="container">
+
+        <div class="header">
+            <h3>Instructions</h3>
+            <span class="details">
+                This mock application is based on a sample model created on 
+                <strong>Probability of Default</strong>. View the full notebook <a href="https://www.kaggle.com/penroselearning/probability-of-default-bank-loan-data" target="_blank">here</a></span>
+            <span class="details">
+                <br><br>The derived model has already been plugged into this application. <a href="https://github.com/penroselearning/databank/raw/master/Financial/bank_data.csv.zip">Download</a> the sample csv file to be used for the prediction.</span>
+            
+            <hr>
+            <!-- <p class="details">View the complete notebook </p>
+
+            <p class="details">The model has already been plugged into the application, upload the sample dataset to make the prediction</p> -->
+    
+        </div>
+
+        <div class="title">
+              <span>Apply the Model</span>
+              
+        </div>
+
+        <div class="sub">
+            <span>Probability of Default</span>
+      </div>
+        
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    
+    <div class="alert-warning">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error: </strong>{{message}}
+    </div>
+    
+    {% endfor %}
+    {% endif %}
+    {% endwith %} 
+
+
+      <div class="fileform">
+        <form method="post" enctype="multipart/form-data" class="form">
+                    
+            {{ form.csrf_token }}
+            {{ form.hidden_tag() }}
+           
+           
+            <label>Upload the Sample Dataset</label>
+            {{ form.new_data }}
+
+            {% for error in form.new_data.errors %}
+            <small class="text-danger">{{ error }}</small>  
+            {% endfor %}
+
+            <input type="submit" value="Predict">
+        </form>
+      </div>
+
+      </div>
+
+
+
+</body>
+</html>

@@ -13,6 +13,13 @@ flask-wtf = "*"
 wtforms = "*"
 flask-login = "*"
 werkzeug = "*"
+phonenumbers = "*"
+bootstrap-flask = "*"
+flask-pymongo = "*"
+python-dotenv = "*"
+pymongo = {extras = ["srv"], version = "*"}
+pandas = "*"
+joblib = "*"
 
 [requires]
 python_version = "3.7"

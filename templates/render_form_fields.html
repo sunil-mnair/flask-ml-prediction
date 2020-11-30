@@ -8,3 +8,14 @@
 {% endfor %}
 
 {% endmacro %}
+
+{% macro render_phone(field) %}
+
+<div class="form-group">
+{{ field(class_='form-control') }}
+</div>
+{% for error in field.errors %}
+<p class="text-light text-sm bg-danger">{{ error }}</p>
+{% endfor %}
+
+{% endmacro %}
